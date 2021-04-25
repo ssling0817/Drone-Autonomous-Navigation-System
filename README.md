@@ -1,5 +1,6 @@
-# PyTorch-YOLOv3
-A minimal PyTorch implementation of YOLOv3, with support for training, inference and evaluation.
+# UAV Object Detection using PyTorch-YOLOv3 
+Use Tello drones to perform object detectionA ,using minimal PyTorch implementation of YOLOv3, with support for training, inference and evaluation.
+Visit https://github.com/ssling0817/Midterm_HCC for algorithm explanation.
 
 ## Installation
 ##### Clone and install requirements
