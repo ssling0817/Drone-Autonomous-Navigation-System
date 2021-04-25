@@ -42,6 +42,8 @@ $ python3 train.py --model_def config/yolov3-custom.cfg --data_config config/cus
 ```
 
 Add `--pretrained_weights weights/darknet53.conv.74` to train using a backend pretrained on ImageNet.
+#### Change detect target
+Change target in `detect_UAV.py'`, it will change the detect target of the drone. Make sure this target exists in your `data/custom/classes.names`.
 
 ##### Download pretrained weights
     $ cd weights/
