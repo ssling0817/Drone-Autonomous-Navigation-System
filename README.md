@@ -3,7 +3,7 @@ A minimal PyTorch implementation of YOLOv3, with support for training, inference
 
 ## Installation
 ##### Clone and install requirements
-    $ git clone https://github.com/eriklindernoren/PyTorch-YOLOv3
+    $ git clone https://github.com/ssling0817/UAV_Object_Detection
     $ cd PyTorch-YOLOv3/
     $ sudo pip3 install -r requirements.txt
 
@@ -119,8 +119,13 @@ Move the images of your dataset to `data/custom/images/`.
 #### Annotation Folder
 Move your annotations to `data/custom/labels/`. The dataloader expects that the annotation file corresponding to the image `data/custom/images/train.jpg` has the path `data/custom/labels/train.txt`. Each row in the annotation file should define one bounding box, using the syntax `label_idx x_center y_center width height`. The coordinates should be scaled `[0, 1]`, and the `label_idx` should be zero-indexed and correspond to the row number of the class name in `data/custom/classes.names`.
 
-#### Define Train and Validation Sets
-In `data/custom/train.txt` and `data/custom/valid.txt`, add paths to images that will be used as train and validation data respectively.
+#### Create Train and Validation Sets
+To train on the custom dataset run:
+
+```
+$ python3 merge_names.py 
+```
+It will automatically create train and validation sets in `data/custom/train.txt` and`data/custom/vak.txt` which are yout paths to images that will be used as train and validation data respectively.
 
 #### Train
 To train on the custom dataset run:
@@ -136,19 +141,6 @@ Add `--pretrained_weights weights/darknet53.conv.74` to train using a backend pr
 
 ### YOLOv3: An Incremental Improvement
 _Joseph Redmon, Ali Farhadi_ <br>
-
-**Abstract** <br>
-We present some updates to YOLO! We made a bunch
-of little design changes to make it better. We also trained
-this new network that’s pretty swell. It’s a little bigger than
-last time but more accurate. It’s still fast though, don’t
-worry. At 320 × 320 YOLOv3 runs in 22 ms at 28.2 mAP,
-as accurate as SSD but three times faster. When we look
-at the old .5 IOU mAP detection metric YOLOv3 is quite
-good. It achieves 57.9 AP50 in 51 ms on a Titan X, compared
-to 57.5 AP50 in 198 ms by RetinaNet, similar performance
-but 3.8× faster. As always, all the code is online at
-https://pjreddie.com/yolo/.
 
 [[Paper]](https://pjreddie.com/media/files/papers/YOLOv3.pdf) [[Project Webpage]](https://pjreddie.com/darknet/yolo/) [[Authors' Implementation]](https://github.com/pjreddie/darknet)
 
